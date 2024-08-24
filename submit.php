@@ -10,9 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $comments = htmlspecialchars($_POST['comments']);
 
     // Example: Send email
-    $to = "your-email@example.com";
+    $to = "mariaamm.ahmedd@gmail.com";
     $subject = "Survey Response";
-    $message = "Name: $name\nEmail: $email\nAge: $age\nAnswer: $answer\nQuestion 5: $question5\nDates: $dates\nComments: $comments";
+    $message = "Love-survey's submition";
     $headers = "From: $email";
 
     mail($to, $subject, $message, $headers);
