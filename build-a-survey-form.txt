@@ -1,0 +1,208 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+     <div class="survey-container">
+      <h1 id="title">💖 Love Quiz 💖</h1>
+        <p id="description">Please answer the questions below </p>
+        <form id="survey-form">
+           <div class="name">
+                <label for="name" id="name-label">What’s Your Name?</label> <input type="text" id="name" name="q1" placeholder="ex: Batman" required>
+</div>
+ <div class="email">
+    <label for="email" id="email-label">What’s Your Email?</label>
+      <input type="email" id="email" placeholder="blabla@blabla.com" name="q2" required>
+</div>
+ <div class="age">
+    <label for="number" id="number-label">How old am i?</label>
+    <input type="number" id="number" name="q3" required min="23" max="23" placeholder="iykyk">
+</div>
+<div>
+<label for="dropdown">Who do you like most? </label>
+  <select id="dropdown" name="answers">
+    <option value="" disabled selected>Select an option</option>
+    <option value="1"selected>Mariam</option>
+    <option value="2" disabled>Georgina</option>
+    <option value="3" disabled>Madison</option>
+    <option value="1"selected>Mariam Ahmed</option>
+            </select></div>
+  <div class="inline">
+    <label>What do you like most about me?</label><label><input type="radio" name="question5" value="question5">My cuteness</label>
+    <label><input input type="radio" name="question5" value="question5">My pretty face</label>
+    <label><input input type="radio" name="question5"value="question5" >My kind heart</label>
+    <label><input input type="radio" name="question5" value="question5">All of the above</label>
+  </div>
+  <div class="checkbox-section">
+    <p>What date would you like us to go on?</p><p>(note: you can select several ones)</p><label><input type=checkbox value="date1">Beach date</label>
+    <label><input type="checkbox" value="date2">Wine tasting</label>
+    <label><input type="checkbox" value="date3">Stargazing trip</label>
+    <label><input type="checkbox" value="date4">Couples massage</label>
+    <label><input type="checkbox" value="date5">Comedy show</label>
+  </div>
+  <div>
+    <label>💖💖 If you have any comments or you wanna show love to me please tell me below 💖💖<textarea id="comments" name="comments" placeholder="Enter Your Comment"></textarea>
+         </div>
+         <div class="ending">
+         <p>Thank you for filling up my survey, please submit using the button below:</p>
+         <button type="submit" id="submit">Submit</button><!--submit button-->
+         </div>
+         </form>
+         </html>
+
+** end of undefined **
+
+** start of undefined **
+
+/* styles.css */
+
+/* Reset some default browser styles */
+body, h1, p, form, input, select, textarea, button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic styling for the body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f4f9;
+  color: #333;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container for the survey form */
+.survey-container {
+  background-color: #fce4ec;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Title styling */
+#title {
+  text-align: center;
+  color: #ff6f61;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+/* Description styling */
+#description {
+  text-align: center;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* General input styling */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Styling for labels */
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Styling for radio buttons and checkboxes */
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Inline section styling */
+.inline {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+div p:last-of-type {
+  margin-bottom: 10px;
+}
+
+/* Checkbox options styling */
+.inline label {
+  margin-bottom: 5px;
+}
+
+/* Space between the checkbox section and the next label */
+.checkbox-section {
+  margin-bottom: 20px; 
+}
+
+/* Styling for the comments textarea */
+#comments {
+  height: 100px;
+  resize: vertical;
+}
+
+/* Button styling */
+button {
+  background-color: #ff6f61;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  padding: 15 15 15 15;
+  background-color: #e55b50;
+}
+
+/* Ending section styling */
+.ending {
+  text-align: center;
+  margin-top: 20px;
+}
+.ending p:last-of-type {
+  margin-bottom: 20px; /* Adjust this value to control space between text and button */
+}
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .survey-container {
+    padding: 10px;
+  }
+
+  #title {
+    font-size: 1.5em;
+  }
+
+  #comments {
+    height: 80px;
+  }
+}
+
+** end of undefined **
+
