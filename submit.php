@@ -11,13 +11,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Example: Send email
     $to = "mariaamm.ahmedd@gmail.com";
-    $subject = "Survey Response";
-    $message = "Love-survey's submition";
+    $subject = "Survey Form Submission";
+    $message = "Name: $name\nEmail: $email\nAge: $age\nAnswer: $answer\nQuestion 5: $question5\nDates: $dates\nComments: $comments";
     $headers = "From: $email";
 
-    mail($to, $subject, $message, $headers);
-
-    // Redirect or display a thank you message
-    echo "Thank you for your submission!";
+    // Send email
+    if (mail($to, $subject, $message, $headers)) {
+        echo "Thank you for your submission!";
+    } else {
+        echo "Sorry, there was a problem sending your submission.";
+    }
 }
 ?>
+    
