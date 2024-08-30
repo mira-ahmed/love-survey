@@ -57,10 +57,17 @@
     // Dropdown menu interaction
     document.getElementById('dropdown').addEventListener('change', function() {
       const selectedValue = this.value;
+      const submitButton = document.getElementById('submit');
       if (selectedValue === 'Mariam') {
         alert('🎉 Hooray! You picked the right one! I am proud of you! 💖');
+        submitButton.classList.add('enabled');
+        submitButton.classList.remove('disabled');
+        submitButton.disabled = false;
       } else {
         alert('Oops! 😔 Not quite right. The best choice is "Mariam" 🌟');
+        submitButton.classList.add('disabled');
+        submitButton.classList.remove('enabled');
+        submitButton.disabled = true;
       }
     });
 
@@ -94,13 +101,6 @@
           alert(`✨ Great choice! Looking forward to a ${this.value}! ✨`);
         }
       });
-    });
-
-    // Form submission interaction
-    document.getElementById('survey-form').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent the form from submitting immediately
-      alert('Thank you for filling out my survey! 🎉 Your responses are valuable and appreciated! 💕');
-      this.submit(); // Submit the form after showing the alert
     });
   </script>
   </body>
