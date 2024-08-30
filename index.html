@@ -21,30 +21,29 @@
       <input type="email" id="email" placeholder="blabla@blabla.com" name="q2" required>
 </div>
  <div class="age">
-    <label for="number" id="number-label">How old am i?</label>
-    <input type="number" id="number" name="q3" required min="23" max="23" placeholder="iykyk">
+    <label for="number" id="number-label">How long have we been together?</label>
+    <input type="number" id="number" name="q3" required min="30" max="30" placeholder="iykyk">
 </div>
 <div>
 <label for="dropdown">Who do you like most? </label>
   <select id="dropdown" name="q4">
     <option value="" disabled selected>Select an option</option>
-    <option value="1"selected>Mariam</option>
-    <option value="2" disabled>Georgina</option>
-    <option value="3" disabled>Madison</option>
-    <option value="1"selected>Mariam Ahmed</option>
+    <option value="Mariam">Mariam</option>
+    <option value="Georgina">Georgina</option>
+    <option value="Madison">Madison</option>
             </select></div>
   <div class="inline">
-    <label>What do you like most about me?</label><label><input type="radio" name="question5" value="question5">My cuteness</label>
-    <label><input input type="radio" name="question5" value="question5">My pretty face</label>
-    <label><input input type="radio" name="question5"value="question5" >My kind heart</label>
-    <label><input input type="radio" name="question5" value="question5">All of the above</label>
+    <label>What do you like most about me?</label><label><input type="radio" name="question5" value="My cuteness">My cuteness</label>
+    <label><input input type="radio" name="question5" value="My pretty face">My pretty face</label>
+    <label><input input type="radio" name="question5"value="My kind heart" >My kind heart</label>
+    <label><input input type="radio" name="question5" value="All of the above">All of the above</label>
   </div>
   <div class="checkbox-section">
-    <p>What date would you like us to go on?</p><p>(note: you can select several ones)</p><label><input type=checkbox value="date1" name="q6">Beach date</label>
-    <label><input type="checkbox" value="date2" name="q6">Wine tasting</label>
-    <label><input type="checkbox" value="date3" name="q6">Stargazing trip</label>
-    <label><input type="checkbox" value="date4" name="q6">Couples massage</label>
-    <label><input type="checkbox" value="date5" name="q6">Comedy show</label>
+    <p>What date would you like us to go on?</p><p>(note: you can select several ones)</p><label><input type=checkbox value="Beach date" name="q6">Beach date</label>
+    <label><input type="checkbox" value="Wine tasting date" name="q6">Wine tasting</label>
+    <label><input type="checkbox" value="Stargazing trip" name="q6">Stargazing trip</label>
+    <label><input type="checkbox" value="Couples massage" name="q6">Couples massage</label>
+    <label><input type="checkbox" value="Comedy show" name="q6">Comedy show</label>
   </div>
   <div>
     <label>💖💖 If you have any comments or you wanna show love to me please tell me below 💖💖<textarea id="comments" name="comments" placeholder="Enter Your Comment"></textarea>
@@ -54,6 +53,57 @@
          <button type="submit" id="submit">Submit</button><!--submit button-->
          </div>
          </form>
+       <script>
+    // Dropdown menu interaction
+    document.getElementById('dropdown').addEventListener('change', function() {
+      const selectedValue = this.value;
+      if (selectedValue === 'Mariam') {
+        alert('🎉 Hooray! You picked the right one! I am proud of you! 💖');
+      } else {
+        alert('Oops! 😔 Not quite right. The best choice is "Mariam" 🌟');
+      }
+    });
+
+    // Radio buttons interaction
+    document.querySelectorAll('input[type="radio"]').forEach(function(radio) {
+      radio.addEventListener('change', function() {
+        let choice = this.value;
+        let message;
+        switch (choice) {
+          case 'My cuteness':
+            message = 'Aww, you think I’m cute? You just made my day! 🥰';
+            break;
+          case 'My pretty face':
+            message = 'You’re making me blush! 😘 Thanks for the compliment!';
+            break;
+          case 'My kind heart':
+            message = 'You’re so sweet! 🌸 My heart is full of joy!';
+            break;
+          case 'All of the above':
+            message = 'You’re the best! 🌟 You really know how to make me smile!';
+            break;
+        }
+        alert(message);
+      });
+    });
+
+    // Checkboxes interaction
+    document.querySelectorAll('input[type="checkbox"]').forEach(function(checkbox) {
+      checkbox.addEventListener('change', function() {
+        if (this.checked) {
+          alert(`✨ Great choice! Looking forward to a ${this.value}! ✨`);
+        }
+      });
+    });
+
+    // Form submission interaction
+    document.getElementById('survey-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting immediately
+      alert('Thank you for filling out my survey! 🎉 Your responses are valuable and appreciated! 💕');
+      this.submit(); // Submit the form after showing the alert
+    });
+  </script>
+  </body>
          </html>
 
 
