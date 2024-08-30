@@ -48,6 +48,7 @@
   <div>
     <label>💖💖 If you have any comments or you wanna show love to me please tell me below 💖💖<textarea id="comments" name="comments" placeholder="Enter Your Comment"></textarea>
          </div>
+          <div class="error-message" id="error-message" style="display: none;">You must choose the correct answer to submit!</div>
          <div class="ending">
          <p>Thank you for filling up my survey, please submit using the button below:</p>
          <button type="submit" id="submit">Submit</button><!--submit button-->
@@ -55,19 +56,23 @@
          </form>
        <script>
     // Dropdown menu interaction
-    document.getElementById('dropdown').addEventListener('change', function() {
+    const dropdown = document.getElementById('dropdown');
+    const submitButton = document.getElementById('submit');
+    const errorMessage = document.getElementById('error-message');
+    dropdown.addEventListener('change', function() {
       const selectedValue = this.value;
-      const submitButton = document.getElementById('submit');
       if (selectedValue === 'Mariam') {
         alert('🎉 Hooray! You picked the right one! I am proud of you! 💖');
         submitButton.classList.add('enabled');
         submitButton.classList.remove('disabled');
         submitButton.disabled = false;
+        errorMessage.style.display = 'none';
       } else {
         alert('Oops! 😔 Not quite right. The best choice is "Mariam" 🌟');
         submitButton.classList.add('disabled');
         submitButton.classList.remove('enabled');
         submitButton.disabled = true;
+        errorMessage.style.display = 'none'; // Hide error message on valid input
       }
     });
 
@@ -101,6 +106,19 @@
           alert(`✨ Great choice! Looking forward to a ${this.value}! ✨`);
         }
       });
+    });
+    // Form submission interaction
+    document.getElementById('survey-form').addEventListener('submit', function(event) {
+      const selectedValue = dropdown.value;
+
+      if (selectedValue !== 'Mariam') {
+        event.preventDefault(); // Prevent the form from submitting
+        errorMessage.style.display = 'block'; // Show error message
+        alert('You must choose the correct answer to submit! 😢');
+      } else {
+        alert('Thank you for filling out my survey! 🎉 Your responses are valuable and appreciated! 💕');
+        // No need to call this.submit(); form submission will proceed if the form is valid
+      }
     });
   </script>
   </body>
