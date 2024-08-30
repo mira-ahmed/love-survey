@@ -97,6 +97,10 @@ div p:last-of-type {
 .checkbox-section {
   margin-bottom: 20px; 
 }
+.checkbox-section label, .inline label {
+      display: block;
+      margin: 5px 0;
+    }
 
 /* Styling for the comments textarea */
 #comments {
@@ -114,11 +118,22 @@ button {
   font-size: 1em;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  opacity: 0.5; /* Start with the button disabled */
 }
+button.enabled {
+      opacity: 1; /* Make button fully opaque when enabled */
+    }
 
 button:hover {
   padding: 15 15 15 15;
   background-color: #e55b50;
+}
+.error-message {
+      color: #e74c3c;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      margin: 10px 0;
 }
 
 /* Ending section styling */
