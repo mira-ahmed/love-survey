@@ -100,13 +100,21 @@
     });
 
     // Checkboxes interaction
-    document.querySelectorAll('input[type="checkbox"]').forEach(function(checkbox) {
-      checkbox.addEventListener('change', function() {
-        if (this.checked) {
-          alert(`✨ Great choice! Looking forward to a ${this.value}! ✨`);
-        }
-      });
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  let multipleDatesMessageShown = false;
+
+  checkboxes.forEach(function(checkbox) {
+    checkbox.addEventListener('change', function() {
+      const checkedCount = document.querySelectorAll('input[type="checkbox"]:checked').length;
+
+      if (checkedCount === 1) {
+        alert(`✨ Great choice! Looking forward to a ${this.value}! ✨`);
+      } else if (checkedCount > 1 && !multipleDatesMessageShown) {
+        alert('✨ I am excited to go on all of these dates with you ✨');
+        multipleDatesMessageShown = true; // Ensure the message is shown only once
+      }
     });
+  });
     // Form submission interaction
     document.getElementById('survey-form').addEventListener('submit', function(event) {
       const selectedValue = dropdown.value;
